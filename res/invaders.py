@@ -37,7 +37,7 @@ class invader_type():
             # using the class initiated list ship_list find one ship name that 
             # matches the given string as close as possible
             found_this = process.extractOne(find_this, self.get_invaders())
-            # rapidfuzz returns the name and the ratio so strip the ratio and keep 
+            # rapidfuzz returns the name and the ratio so strip the ratio and keep
             # the ship name
             invader_name = found_this[0]
             # return the ship name as a string
@@ -82,19 +82,21 @@ class invader_type():
     def get_sql_obj(self):
         if self.sc == self.type:
             i_obj = self.sql_i_name_obj()
+            return i_obj
         else:
             i_obj = self.sql_i_type_obj()
-
-        return i_obj
+            return i_obj
 
     def get_description(self):
         list1 = []
-        for i in self.i_obj:
-            if self.sc == self.type:
+        if self.sc == self.type:
+            for i in self.i_obj:
                 list1.append(f"{customemoji(self.bot_self, i['type'])} {i['hp']}")
-            else:
+            return '\n'.join(list1)
+        else:
+            for i in self.i_obj:
                 list1.append(f"{customemoji(self.bot_self, i['name'])} {i['hp']}")
-        return '\n'.join(list1)
+            return '\n'.join(list1)
 
     def get_title(self):
         if self.sc == self.type:

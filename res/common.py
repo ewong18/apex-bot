@@ -30,7 +30,7 @@ def ship_search(find_this):
     # using the class initiated list ship_list find one ship name that 
     # matches the given string as close as possible
     found_this = process.extractOne(find_this, get_ships())
-    # rapidfuzz returns the name and the ratio so strip the ratio and keep 
+    # rapidfuzz returns the name and the ratio so strip the ratio and keep
     # the ship name
     ship_name = found_this[0]
     # return the ship name as a string
@@ -57,7 +57,7 @@ def invader_search(find_this):
         # using the class initiated list ship_list find one ship name that 
         # matches the given string as close as possible
         found_this = process.extractOne(find_this, get_invaders())
-        # rapidfuzz returns the name and the ratio so strip the ratio and keep 
+        # rapidfuzz returns the name and the ratio so strip the ratio and keep
         # the ship name
         invader_name = found_this[0]
         # return the ship name as a string
@@ -116,7 +116,10 @@ def sql_dmg_brackets():
     return dmg_obj
 
 def dmg_bracket_list():
-    return [i for i in sql_dmg_brackets()]
+    dmg_list = []
+    for i in sql_dmg_brackets():
+        dmg_list.append(i)
+    return dmg_list
 
 
 
@@ -138,7 +141,10 @@ def sql_arg_list():
     return dmg_obj
 
 def arg_parse_list():
-    return [i for i in sql_arg_list()]
+    dmg_list = []
+    for i in sql_arg_list():
+        dmg_list.append(i)
+    return dmg_list
 
 def argument_parser(sc, arg1):
     clean_arg1 = sanitise_input(arg1)

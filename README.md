@@ -1,11 +1,14 @@
-# apex-bot
+# roc-bot
 
 Information bot for the community Phoenix II discord server. 
+Original version located at: https://github.com/Phoenix-II-Community/apex-bot/tree/master
+
+\*\*IMPORTANT** --- Currently "ctx.subcommand_passed" is not working in the code due to Discord not passing the values to the Bot, to get arround this issue, putting "inspect.stack()[0][3]" where "ctx.subcommand_passed" is fixes the isssues. In the cogs folder, daily.py, invader.py, and ship.py is where the changes need to be made.
 
 ## Installation 
-`git clone git@github.com:Phoenix-II-Community/apex-bot.git`
+`git clone https://github.com/ewong18/Roc-Bot.git`
 
-Dependancies
+Dependencies
 
 ```
 python3 -m pip install -U discord.py
@@ -35,12 +38,20 @@ python3 -m pip install -U rapidfuzz
 !ship rarity <rarity>           list ships in a rarity
 !ship zen                       list of Zens
 !ship zen <zen>                 list of ships with zen name
-!ship help                     ship help
+!ship help                      ship help
 ```
 
 #### SOURCE
 ```
 !source                         link to github repo
+```
+
+#### DAILY
+```
+!daily                         current daily briefing
+!daily next                    next daily briefing
+!daily all                     list of full mission rotation
+!daily <n>                     briefing for desired mission rotaion number (1-21)
 ```
 
 #### INVADER 
@@ -70,7 +81,7 @@ python3 -m pip install -U rapidfuzz
 #!apex ship <ship>               apexs the ship has
 #!apex description <apex_name>   apex Description
 #!apex find <apex_name>          list ships with <apex_name>, 
-                                include cost, apex_type (weapon/aura/zen)
+                                 include cost, apex_type (weapon/aura/zen)
 #!apex rank <apex_rank>          list of ships matching apex rank
 ```
 

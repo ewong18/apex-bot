@@ -27,14 +27,16 @@ initial_extensions = ['cogs.simple',
                       'cogs.invader',
                       'cogs.daily',
                       'cogs.img',
-                      'cogs.ship'
+                      'cogs.ship',
+                      'cogs.owner',
+                      'cogs.price'
                       ]
 
 bot = commands.Bot(
     command_prefix=get_prefix, 
     description='Phoenix 2 iOS information bot',
-    # my current ID, change to yours when running
-    owner_id=330274890802266112)
+    # Jinbe current ID, change to yours when running
+    owner_id=197895310108917762)
 
 
 # Here we load our extensions(cogs) listed above in [initial_extensions].
@@ -50,10 +52,10 @@ if __name__ == '__main__':
 async def on_ready():
     """http://discordpy.readthedocs.io/en/rewrite/api.html#discord.on_ready"""
 
-    print(f'We have logged in as {bot.user}')
+    print('We have logged in as {0.user}'.format(bot))
 
     # Changes our bots Playing Status. type=1(streaming) for a standard game you could remove type and url.
-    game = discord.Game("Flying Centurion")
+    game = discord.Game("Phoenix II")
     await bot.change_presence(status=discord.Status.online, activity=game)
     print(f'Successfully logged in and booted...!')
 
